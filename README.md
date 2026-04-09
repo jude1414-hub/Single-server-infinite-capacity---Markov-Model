@@ -43,8 +43,8 @@ print(f"Average Waiting Time a Queue (Wq) = {wq:.4f}")
 ```
 
 ## Output :
+<img width="499" height="257" alt="image" src="https://github.com/user-attachments/assets/5d7634fe-370d-44dc-9a73-b3ed0329163e" />
 
-![image](https://github.com/user-attachments/assets/14fd14fd-a968-40b2-aee3-77d8efefcb10)
 
 ## Result :
 
