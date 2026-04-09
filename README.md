@@ -24,31 +24,22 @@ This is a queuing model in which the arrival is Marcovian and departure distribu
  
 ## Program
 ```
-
-arr_time=float(input("Enter the mean inter arrival time of objects from Feeder (in secs): "))
-ser_time=float(input("Enter the mean  inter service time of Lathe Machine (in secs) :  "))
-Robot_time=float(input("Enter the Additional time taken for the Robot (in secs) :  "))
-lam=1/arr_time
-mu=1/(ser_time+Robot_time)
-print("--------------------------------------------------------------")
-print("Single Server with Infinite Capacity - (M/M/1):(oo/FIFO)")
-print("--------------------------------------------------------------")
-print(f"The mean arrival rate per second : {lam:.2f}")
-print(f"The mean service rate per second : {mu:.2f}")
-if (lam <  mu):
-    Ls=lam/(mu-lam)
-    Lq=Ls-lam/mu
-    Ws=Ls/lam
-    Wq=Lq/lam
-    print(f"Average number of objects in the system : {Ls:.2f}")
-    print(f"Average number of objects in the conveyor :  {Lq:.2f}")
-    print(f"Average waiting time of an object in the system : {Ws:.2f} secs")
-    print(f"Average waiting time of an object in the conveyor : {Wq:.2f} secs")
-    print(f"Probability that the system is busy : {(lam/mu):.2f}" )
-    print(f"Probability that the system is empty : {(1-lam/mu):.2f}" )
-else:
-    print("Warning! Objects Over flow will happen in the conveyor")
-print("---------------------------------------------------------------")
+arrival_interval = 12
+service_time = 7 
+lam = 1/arrival_interval
+mu = 1/service_time
+rho = lam/mu
+ls = lam/(mu - lam)
+lq = (lam ** 2)/(mu * (mu - lam))
+ws = 1/(mu - lam)
+wq = lam/(mu * (mu - lam))
+print(f"Arrival Rate (Lam) = {lam:.4f}")
+print(f"Service Rate (MU) = {mu:.4f}")
+print(f"Traffic Intensity (P) = {rho:.4f}")
+print(f"Average Number in a System (Ls) = {ls:.4f}")
+print(f"Average Number in a Queue (Lq) = {lq:.4f}")
+print(f"Average Waiting Time a System (Ws) = {ws:.4f}")
+print(f"Average Waiting Time a Queue (Wq) = {wq:.4f}")
 ```
 
 ## Output :
